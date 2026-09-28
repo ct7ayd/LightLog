@@ -33,17 +33,16 @@
 
 ## ⚙️ Installation & Usage
 
+For Windows: Run the .EXE or Run the .py with Python
+
 1. Clone the repository:
-   ```bash
-   git clone [https://github.com/ct7ayd/LightLog.git](https://github.com/ct7ayd/LightLog.git)
+      git clone [https://github.com/ct7ayd/LightLog.git](https://github.com/ct7ayd/LightLog.git)
    cd LightLog
 
 Install required dependencies:
-
 pip install requests pyserial pillow matplotlib tkintermapview
 
 Run the application:
-
 python lightlog_2026_v1.2_14.py
 
 📄 License
