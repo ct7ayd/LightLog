@@ -1,47 +1,52 @@
-What is LightLog 2026?
+# LightLog 2026 (V1.2) - Amateur Radio Station Logbook
 
-LightLog 2026 is a modern, lightweight, and high-performance amateur radio logging application designed to optimize shack operations. Featuring native CAT integration (supporting FlexRadio/SmartSDR, Icom, Kenwood, and Yaesu), Telnet connection to DX Cluster servers with a Raw Stream monitor, and full bidirectional synchronization with QRZ.com (including API keys and XML), LightLog ensures total real-time control of your radio operations.
+**LightLog 2026** is a modern, feature-rich Ham Radio station logbook and control software built with Python and Tkinter. Designed for radio amateurs, it integrates rig control, real-time DX Cluster monitoring, QRZ.com data lookup, propagation tracking, and advanced logging analytics into a single, clean desktop application.
 
-Main Features
-Integrated CAT and CI-V Control: Direct connection to the radio via serial port (pyserial) or TCP/IP (compatible with FlexRadio, Kenwood, Icom, and Yaesu). Automatically updates frequency (in Hertz), band, and operating mode in real-time.
+---
 
-DX Cluster & Raw Stream Monitor: Simultaneous connection to DX Cluster servers via Telnet with smart filters for active bands and specific modes (SSB, CW, DIGI), accompanied by an advanced diagnostic window (Raw Stream Monitor).
+## 🚀 Key Features
 
-Full QRZ.com Integration:
+*   **📻 Radio Control (CAT & SmartSDR):** Real-time frequency, band, and mode tracking supporting major transceiver protocols (FlexRadio, Kenwood, Icom CI-V, Yaesu) via Serial (COM) ports or TCP/IP connections.
+*   **🔍 QRZ.com Integration:** Automated XML API lookups to instantly fetch operator details (Name, QTH, Country, Grid Locator) and profile photos.
+*   **📡 Live DX Cluster Monitor:** Built-in Telnet client for DX spots with real-time streaming, raw monitor debugging, and advanced filtering by active band and operating mode (CW, SSB, Digital).
+*   **📊 Statistics & Analytics Dashboard:** Comprehensive Matplotlib integration displaying KPIs and interactive charts:
+    *   QSOs by Band & Mode
+    *   Monthly Evolution (Last 12 Months)
+    *   Top 20 Countries / DXCC
+*   **🗺️ Interactive Global Map:** Visual mapping of logged contacts and Maidenhead locator grids using `tkintermapview` and OpenStreetMap integration.
+*   **☀️ Solar & Ionospheric Propagation Monitor:** Live tracking of Solar Flux Index (SFI), K-Index, A-Index, solar wind, and estimated HF band conditions.
+*   **📂 ADIF Import & Export:** Full compatibility with standard `.adi` logbook files for seamless backup and synchronization with online logbooks (including QRZ.com Logbook).
+*   **🌐 Multilingual Interface:** Fully localized support for Portuguese (`pt`) and English (`en`).
 
-Automatic callsign XML lookup for instant population of name, QTH, country, Grid Locator, and operator photo.
+---
 
-Support for operator photo downloading (with a full-size viewer) and automatic or batch uploading of pending QSOs to the QRZ.com logbook via API key.
+## 🛠️ Tech Stack
 
-Geographical Tools and Integrated Map: Automatic calculation of distance in kilometers and bearing based on the station's and correspondent's Grid Locator, complemented by an interactive map window (tkintermapview) for direct QTH visualization.
+*   **Language:** Python 3.x
+*   **GUI Framework:** Tkinter & TTK
+*   **Mapping:** `tkintermapview`
+*   **Charts:** Matplotlib (`FigureCanvasTkAgg`)
+*   **Networking & Hardware:** `pyserial`, `requests`, Socket programming
+*   **Data Storage:** SQLite3
 
-Advanced Statistics and Dynamic Charts: Integrated analytical dashboard (with matplotlib support) displaying real-time metrics for total QSOs, unique callsigns, worked bands, percentage distribution of modes, and monthly contact evolution.
+---
 
-Data Management and ADIF Compatibility: Simplified import and export of .adi files for total interoperability with other market software.
+## ⚙️ Installation & Usage
 
-Optimized Interface and Keyboard Shortcuts: Multilingual support (Portuguese and English) and integrated quick commands to streamline workflows during contests or pile-ups:
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/ct7ayd/LightLog.git](https://github.com/ct7ayd/LightLog.git)
+   cd LightLog
 
-Ctrl + S: Save QSO
+Install required dependencies:
 
-Esc: Clear form / cancel
+pip install requests pyserial pillow matplotlib tkintermapview
 
-Ctrl + F: Quick search in history
+Run the application:
 
-Cross-Platform Architecture: Compatible with Windows, Linux, and macOS, running in a Python environment.
+python lightlog_2026_v1.2_14.py
 
-Technical Requirements
-Operating System: Windows 10/11, Linux, or macOS.
+📄 License
+Distributed under the MIT License. See LICENSE for more information.
 
-Runtime Environment: Python 3.10 or higher.
-
-Required Python Modules: tkinter, pyserial, requests, pillow, matplotlib, and tkintermapview.
-
-Internet Connection: Required for QRZ.com XML lookups, DXCC flag downloads, and DX Cluster spot reception.
-
-<img width="1319" height="766" alt="image" src="https://github.com/user-attachments/assets/ad2ec4b6-684e-4e53-b0fb-18f231aa8cdd" />
-
-<img width="452" height="812" alt="image" src="https://github.com/user-attachments/assets/1dc289ea-60e2-4f9c-8a02-2854c21d2719" />
-
-<img width="1334" height="457" alt="image" src="https://github.com/user-attachments/assets/ab9515e9-305d-44da-9ec4-46dad006de34" />
-
-
+Developed with ⚡ by José Luís Albuquerque (CT7AYD)
