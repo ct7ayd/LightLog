@@ -1,45 +1,28 @@
-# LightLog 2026 (V1.2)
+# LightLog 2026 (V1.3)
 
-**LightLog 2026** is an advanced application developed in Python (featuring a Tkinter graphical user interface) designed for the comprehensive management of amateur radio stations.
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
-
-## 🚀 Features
-
-* **Radio Control (CAT / RIG Control):** Support for serial port (COM) or TCP/IP connections, compatible with various manufacturers and protocols (FlexRadio / SmartSDR, Kenwood, Icom, and Yaesu), enabling real-time reading and writing of frequency, band, and operating mode.
-* **QSO Management (Logging and Editing):** A comprehensive form for logging contacts with automatic timestamping in UTC, callsign, RST, band, mode, name, QTH, country, and grid locator, including automatic duplicate contact detection (DUPE).
-* **QRZ.com Integration:** Direct search functionality within the QRZ.com XML database to automatically populate biographical and geographical data for the corresponding station, view operator photographs, and synchronize/submit pending logs using the QRZ Logbook API.
-* **Real-Time DX Cluster:** Integrated Telnet client for connecting to DX Cluster servers with live spot monitoring, filters for active bands or modes (SSB, CW, Digital), visual alerts, and DXCC country flag indications.
-* **Statistics and Charts:** Key Performance Indicator (KPI) dashboards and analytical charts generated using Matplotlib covering QSO distribution by band, by mode, monthly evolution (last 12 months), and the Top 20 countries/DXCC.
-* **Mapping and Geographic Tools:** Integration with interactive maps (`tkintermapview`) for automatic calculation of bearing, distance in kilometers based on the Grid Locator, and geographic visualization of completed contacts.
-* **Solar Propagation Monitor:** A dedicated module for tracking ionospheric and solar indices (SFI, K-index, A-index, and solar wind), along with a condition summary table for HF bands.
-* **ADIF Import and Export:** Full capability to import and export contact databases in the universal ADIF format (`.adi`).
-* **Customization and Multilingual Interface:** Native support for Portuguese and English, configurable settings stored in JSON format, quick keyboard shortcuts (such as `Ctrl+S` to save or `Ctrl+F` to search), and detailed callsign history.
+**LightLog 2026** is an advanced amateur radio station control and logbook software built in Python. It features a modern graphical interface (`tkinter`), local database management (`sqlite3`), real-time CAT control, QRZ.com integration, DX Cluster monitoring, interactive mapping, and detailed analytical charts.
 
 ---
 
-## 🛠️ Tech Stack
+## 🚀 Key Features
 
-* **Language:** Python
-* **GUI Framework:** Tkinter & `tkintermapview`
-* **Data Visualization:** Matplotlib
-* **Data Formats:** ADIF, JSON
+* **QSO Management:** Complete logging, editing, and deletion with automatic **DUPE detection** (band/mode/callsign). Keyboard shortcuts (`Ctrl+S`, `Esc`, `Ctrl+F`).
+* **CAT Control:** Real-time frequency and mode tracking for major transceiver brands (FlexRadio, Kenwood, Icom, Yaesu) via Serial (COM) or TCP/IP.
+* **QRZ.com Integration:** Automatic data lookups, profile picture retrieval, and pending log synchronization via API.
+* **DX Cluster Monitor:** Live Telnet DX cluster spots with band/mode filters and one-click radio tuning.
+* **Analytics & Charts:** Visual statistics generated via `matplotlib` (QSOs by band/mode, monthly trends, Top 20 DXCC countries).
+* **Interactive Global Map:** Visualizes contact locations using Grid Locators, calculating bearing and distance (`tkintermapview`).
+* **Solar & Propagation Monitor:** Tracks SFI, K-index, A-index, and band conditions.
+* **Multilingual:** Full support for English and Portuguese.
 
 ---
 
-## ⚙️ Installation & Usage
+## 📋 Prerequisites & Installation
 
-```bash
-# Clone the repository
-git clone [https://github.com/your-username/lightlog-2026.git](https://github.com/your-username/lightlog-2026.git)
-
-# Navigate to the project directory
-cd lightlog-2026
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the application
-python main.py
-
-MIT License
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/SEU_UTILIZADOR/LightLog-2026.git](https://github.com/SEU_UTILIZADOR/LightLog-2026.git)
+   cd LightLog-2026
