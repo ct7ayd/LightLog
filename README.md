@@ -1,28 +1,50 @@
-# LightLog 2026 (V1.3)
+# 📻 LightLog 2026 (V1.4) - Station Logbook & Radio Control
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-**LightLog 2026** is an advanced amateur radio station control and logbook software built in Python. It features a modern graphical interface (`tkinter`), local database management (`sqlite3`), real-time CAT control, QRZ.com integration, DX Cluster monitoring, interactive mapping, and detailed analytical charts.
+**LightLog 2026** is an advanced radio amateur contact logging (Logbook) and station control application developed in Python with a Tkinter graphical user interface. It combines CAT radio monitoring, real-time integration with DX Clusters, geolocation tools, and synchronization with QRZ.com.
 
 ---
 
 ## 🚀 Key Features
 
-* **QSO Management:** Complete logging, editing, and deletion with automatic **DUPE detection** (band/mode/callsign). Keyboard shortcuts (`Ctrl+S`, `Esc`, `Ctrl+F`).
-* **CAT Control:** Real-time frequency and mode tracking for major transceiver brands (FlexRadio, Kenwood, Icom, Yaesu) via Serial (COM) or TCP/IP.
-* **QRZ.com Integration:** Automatic data lookups, profile picture retrieval, and pending log synchronization via API.
-* **DX Cluster Monitor:** Live Telnet DX cluster spots with band/mode filters and one-click radio tuning.
-* **Analytics & Charts:** Visual statistics generated via `matplotlib` (QSOs by band/mode, monthly trends, Top 20 DXCC countries).
-* **Interactive Global Map:** Visualizes contact locations using Grid Locators, calculating bearing and distance (`tkintermapview`).
-* **Solar & Propagation Monitor:** Tracks SFI, K-index, A-index, and band conditions.
-* **Multilingual:** Full support for English and Portuguese.
+### 📝 QSO Logging & Log Management
+* **Comprehensive Logging**: Support for callsigns, UTC date/time (with an option to freeze/unfreeze the clock), frequencies, bands (160m to 70cm), modes (SSB, CW, FT8, RTTY, etc.), sent and received RST, name, QTH, country, Grid Locator, and comments.
+* **Duplicate Detection (DUPE)**: Immediate visual alert if the QSO has already been logged on the same band and mode.
+* **DXCC Indicators (ATNO & New Band)**: Automatic identification of All Time New Entities (ATNO) and new contacts on specific bands.
+* **Callsign History**: Quick view of previous contacts made with the same callsign directly on the panel.
+* **ADIF Import & Export**: Full compatibility with `.adi` files to import and export logs to/from other software.
 
----
+### 📻 Radio Control (CAT / SmartSDR / FlexRadio)
+* **Flexible Connection**: Supports communication via Serial Port (CAT) and TCP/IP.
+* **Supported Protocols**: Compatible with equipment and software using **FlexRadio, Kenwood, Yaesu, and Icom (CI-V)** protocols.
+* **Automatic Synchronization**: Real-time reading of frequency, band, and mode directly from the radio, automatically filling out the QSO form.
+* **Remote Frequency Control**: Ability to tune the radio directly from the DX Cluster or selected spots.
 
-## 📋 Prerequisites & Installation
+### 📡 DX Cluster & Real-Time Spots
+* **Integrated Telnet Client**: Connection to DX Cluster servers (e.g., `dxc.nc7j.com`) with automatic reconnection and a raw stream monitor.
+* **Advanced Filters**: Filter spots by "Active Band Only" and by mode (SSB, CW, Digital).
+* **SmartSDR Integration**: Automatic forwarding of spots to the SmartSDR Panadapter via TCP API.
+* **Spot Submission**: Dedicated panel to submit new DX Spots directly to the cluster.
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/SEU_UTILIZADOR/LightLog-2026.git](https://github.com/SEU_UTILIZADOR/LightLog-2026.git)
-   cd LightLog-2026
+### 🌐 Geolocation & Interactive Maps
+* **Global Maps & Mini-Maps**: Integration with `tkintermapview` to visualize contact locations in the log and geographical positions.
+* **Distance and Bearing Calculation**: Automatic calculation of distance in kilometers and azimuth based on Grid Locators.
+* **Visual Flag Indicators**: Support for country identification and flag thumbnails based on the `cty.dat` file parser.
+
+### 🔑 QRZ.com Integration
+* **XML Search**: Instant lookup of callsign data on QRZ.com (Name, QTH, Country, Grid, and profile picture).
+* **Logbook Synchronization**: Upload pending or individual QSOs directly to the QRZ.com Logbook using the API Key.
+
+### 📊 Statistics & Advanced Charts
+* Integrated analytical dashboard powered by **Matplotlib**, displaying:
+  * Charts of QSOs by Band and Mode.
+  * Monthly evolution (last 12 months).
+  * Top 20 Countries / DXCC Entities.
+  * Activity by UTC hour and continent distribution.
+  * KPI cards with total QSOs, unique callsigns, Grid squares, and worked DXCCs.
+
+### ☀️ Solar and Ionospheric Propagation Monitor
+* Real-time solar and ionospheric indices consultation (**SFI - Solar Flux Index, K-Index, A-Index, and Solar Wind**).
+* Table of estimated conditions for HF bands (Day and Night) and critical frequencies (MUF).
+
+### 🌍 Multi-language Support
+* Fully translated and adaptable interface for **7 languages**: Portuguese, English, Spanish, French, German, Italian, and Russian.
